@@ -102,6 +102,7 @@ public class Login implements ActionListener {
 		fr.setLayout(null);
 		fr.setVisible(true);
 	}
+
 	public static void main(String[] args) {
 		new Login();
 	}
