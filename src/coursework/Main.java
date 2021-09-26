@@ -21,11 +21,11 @@ import javax.swing.SwingConstants;
 
 public class Main implements ActionListener{
 	JFrame fr;
-	JPanel panel,panel1,panel2,panel_buy,panel_sell,panel_profile,panel_details;
+	JPanel panel,panel1,panel2,panel_bike,panel_buy,panel_sell,panel_profile,panel_details;
 	Font fon1,fon2,fon3;
-	ImageIcon image_bg,image_btn,gen_img;
+	ImageIcon image_bg;
 	JLabel lbl_img,lbl_gender_img,lbl_topic,lbl_buy_topic,lbl_sell_topic,lbl_profile_topic,lbl_welcome;
-	JButton btn_buy,btn_sell,btn_profile,btn_details;
+	JButton btn_bike,btn_buy,btn_sell,btn_profile,btn_details;
 	JScrollBar scroll_bar;
 	String user;
 	String gender,gender_result;
@@ -36,46 +36,17 @@ public class Main implements ActionListener{
 		fon1=new Font("algerian",Font.BOLD,90);
 		fon2=new Font("algerian",Font.BOLD,25);
 		fon3=new Font("algerian",Font.BOLD,40);
-	
-		panel= new JPanel();
-		panel.setBounds(0,0,1370,700);
-		panel.setLayout(null);
-		fr.add(panel);
-		System.out.println(gender);
-		String male="Male";
-		if (gender.equals(male)) {
-			gender_result="Mr";
-			gen_img=new ImageIcon(getClass().getResource("male.png"));
-			lbl_gender_img=new JLabel(gen_img);
-			lbl_gender_img.setBounds(930,20,100,100);
-			panel.add(lbl_gender_img);
 			
-		}
-		else {
-			gender_result="Mrs";
-			gen_img=new ImageIcon(getClass().getResource("female.png"));
-			lbl_gender_img=new JLabel(gen_img);
-			lbl_gender_img.setBounds(930,20,100,100);
-			panel.add(lbl_gender_img);
-		}
 		
-		
-		lbl_welcome= new JLabel("Welcome:"+"  "+gender_result+". "+ user);
-		lbl_welcome.setBounds(1010,60,500,50);
-		lbl_welcome.setForeground(new Color(255,223,0));
-		lbl_welcome.setFont(fon2);
-		panel.add(lbl_welcome);
-		
-		
-		lbl_topic=new JLabel("TECH PRALI");
+		lbl_topic=new JLabel("BENELLI");
 		lbl_topic.setForeground(new Color(255,215,0));
 		lbl_topic.setBounds(350,32,650,100);
 		lbl_topic.setFont(fon1);
 		panel.add(lbl_topic);
 		
 		
-		image_btn=new ImageIcon(getClass().getResource("button.png"));
-		btn_buy=new JButton("Buy",image_btn);
+		
+		btn_buy=new JButton("Buy");
 		btn_buy.setFont(fon3);
 		btn_buy.setForeground(Color.green);
 		btn_buy.setBounds(225,130,250,80);
@@ -89,7 +60,7 @@ public class Main implements ActionListener{
 		panel.add(btn_buy);
 		
 		
-		btn_sell=new JButton("Sell",image_btn);
+		btn_sell=new JButton("Sell");
 		btn_sell.setFont(fon3);
 		btn_sell.setForeground(Color.white);
 		btn_sell.setBounds(475,130,250,80);
@@ -102,7 +73,7 @@ public class Main implements ActionListener{
 		btn_sell.setOpaque(false);
 		panel.add(btn_sell);
 		
-		btn_details=new JButton("Details",image_btn);
+		btn_details=new JButton("Details");
 		btn_details.setFont(fon3);
 		btn_details.setForeground(Color.white);
 		btn_details.setBounds(725,130,250,80);
@@ -115,7 +86,7 @@ public class Main implements ActionListener{
 		btn_details.setOpaque(false);
 		panel.add(btn_details);
 		
-		btn_profile=new JButton("Profile",image_btn);
+		btn_profile=new JButton("Profile");
 		btn_profile.setFont(fon3);
 		btn_profile.setForeground(Color.white);
 		btn_profile.setBounds(975,130,250,80);
@@ -133,7 +104,7 @@ public class Main implements ActionListener{
 		//panel_buy.setLocation(0, 0);
 		panel_buy.setBounds(90,210,1180,400);
 		panel.add(panel_buy);
-		new Buy(panel_buy);
+		
 		
 		panel_sell= new JPanel();
 		panel_sell.setBackground(new Color(210,241,245));
@@ -152,7 +123,7 @@ public class Main implements ActionListener{
 		panel_details.setLayout(null);
 		panel.add(panel_details);
 		
-		image_bg=new ImageIcon(getClass().getResource("bg.jpg"));
+		image_bg=new ImageIcon(getClass().getResource("main_page.png"));
 		lbl_img=new JLabel(image_bg);
 		lbl_img.setBounds(0,0,1370,700);
 		panel.add(lbl_img);
@@ -178,7 +149,9 @@ public class Main implements ActionListener{
 			panel_buy.removeAll();
 			panel_buy.repaint();
 			panel_buy.revalidate();
-			new Buy(panel_buy);    
+			
+			
+			
 			}	
 		else if (e.getSource()==btn_sell) {
 			fr.repaint();

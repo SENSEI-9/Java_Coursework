@@ -1,6 +1,6 @@
 package coursework;
 
-public class buy {
+public class Buy {
 	public buy(){
 
 	}
